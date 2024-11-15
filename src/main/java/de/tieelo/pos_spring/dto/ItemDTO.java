@@ -13,15 +13,15 @@ public class ItemDTO implements Comparable<ItemDTO> {
 	private float stock;
 	private String measurement;
 
-	// Konstruktor, der eine Item-Entität akzeptiert
-	public ItemDTO(Item item) {
-		this.id = item.getItems_id();
-		this.group = item.getGroup().getGroup_names(); // Beispielsweise, wenn `group` auch String hat
-		this.name = item.getItem_name();
-		this.price = item.getItem_price();
-		this.stock = item.getItem_stock();
-		// measurement Feld aus Entität annehmen
-	}
+//	// Konstruktor, der eine Item-Entität akzeptiert
+//	public ItemDTO(Item item) {
+//		this.id = item.getItems_id();
+//		this.group = item.getGroup().getGroup_names(); // Beispielsweise, wenn `group` auch String hat
+//		this.name = item.getItem_name();
+//		this.price = item.getItem_price();
+//		this.stock = item.getItem_stock();
+//		// measurement Feld aus Entität annehmen
+//	}
 
 	@Override
 	public String toString() {
