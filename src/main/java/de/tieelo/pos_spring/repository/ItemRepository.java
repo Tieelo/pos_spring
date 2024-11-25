@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 public interface ItemRepository extends JpaRepository<Item, Integer> {
-	List<Item> findAllByGroup_Groups_id(int groupId);
-	List<Item> findByGroupIdOrderByItemName(int groupId);
+	List<Item> findAllByGroupId(int groupId);
+	List<Item> findByGroupIdOrderByNameAsc(int groupId);
 }
+

@@ -16,26 +16,26 @@ import lombok.Data;
 public class Item {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer items_id;
+	private Integer id;
 
 	@Column(nullable = false, length = 50)
-	private String item_name;
+	private String name;
 
 	@Column(nullable = false)
-	private Float item_price;
+	private Float price;
 
 	@Column(nullable = false)
-	private Float item_stock;
+	private Float stock;
 
 	@ManyToOne
-	@JoinColumn(name = "groups_id", nullable = false)
+	@JoinColumn(name = "group_id", nullable = false)
 	private Group group;
 
 	public void decreaseStock(int quantity){
-		this.item_stock -= quantity;
+		this.stock -= quantity;
 	}
 
 	public void increaseStock(int quantity){
-		this.item_stock += quantity;
+		this.stock += quantity;
 	}
 }

@@ -52,7 +52,7 @@ public class CartService {
 
 	public double getTotalCost() {
 		return itemsInCart.entrySet().stream()
-				.mapToDouble(entry -> entry.getKey().getItem_price() * entry.getValue())
+				.mapToDouble(entry -> entry.getKey().getPrice() * entry.getValue())
 				.sum();
 	}
 

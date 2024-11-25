@@ -26,7 +26,7 @@ public class InventoryService {
 		if (groupId == null) {
 			return itemRepository.findAll();
 		} else {
-			return itemRepository.findByGroupIdOrderByItemName(groupId);
+			return itemRepository.findByGroupIdOrderByNameAsc(groupId);
 		}
 	}
 
