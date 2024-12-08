@@ -7,7 +7,7 @@ import java.util.Set;
 
 @Data
 @Entity
-@Table(name = "groups")
+@Table(name = "groups", schema = "pos_tables")
 public class Group {
 
 	@Id
