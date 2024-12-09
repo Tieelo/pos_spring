@@ -1,0 +1,5 @@
+#0.1.6
+refactoring to Spring and Lombok
+database has changed to postgres
+#0.1.5
+starting Version for semver
