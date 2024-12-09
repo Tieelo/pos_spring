@@ -1,2 +1,12 @@
 /mvnw text eol=lf
 *.cmd text eol=crlf
+# default https://docs.github.com/en/get-started/getting-started-with-git/configuring-git-to-handle-line-endings
+* text=auto
+
+# Windows Batch and Powershell-files should be windows style
+*.bat text eol=crlf
+*.ps1 text eol=crlf
+
+# Linux Bash should be linux style
+*.sh text eol=lf
+[dD]ockerfile text eol=lf

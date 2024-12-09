@@ -1,5 +1,6 @@
 package de.tieelo.pos_spring.config;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.cors.CorsConfiguration;
@@ -13,12 +14,14 @@ import java.util.List;
 @Configuration
 public class CorsConfig implements WebMvcConfigurer {
 
+	@Value("${api.cors.allowedOrigins}")
+	private String[] allowdOrigins;
+
 	@Override
 	public void addCorsMappings(CorsRegistry registry) {
 		registry.addMapping("/api/**")
-				//.allowedOrigins("*")
-				.allowedOrigins("http://localhost:5173")
-				//.allowedOrigins("https://posweb.tieelo.de:444", "https://oauth.tieelo.de:444", "https://pos.tieelo.de:8080", "http://localhost:8080","https://pos.tieelo.de:444", "http://192.168.10.14:8080", "http://[2003:103:818:22a0::51]:8080", "http://localhost:5173" )
+
+				.allowedOrigins(allowdOrigins)
 				.allowedMethods("GET", "POST", "PUT", "DELETE", "HEAD", "OPTIONS")
 				.allowedHeaders("Content-Type", "Authorization", "*")
 				.allowCredentials(true)
@@ -28,7 +31,7 @@ public class CorsConfig implements WebMvcConfigurer {
 	@Bean
 	public CorsConfigurationSource corsConfigurationSource() {
 		CorsConfiguration configuration = new CorsConfiguration();
-		configuration.setAllowedOrigins(List.of("http://localhost:5173"));
+		configuration.setAllowedOrigins(List.of(allowdOrigins));
 		configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "HEAD", "OPTIONS"));
 		configuration.setAllowedHeaders(List.of("Content-Type", "Authorization", "*"));
 		configuration.setAllowCredentials(true);
