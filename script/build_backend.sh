@@ -3,7 +3,7 @@ set -o errexit
 
 source .secrets # enthält die Variablen DOCKER_USERNAME, DOCKER_PASSWORD und GITHUB_TOKEN
 export BRANCH="develop"
-export APPLICATION="swe_pos_backend"
+export APPLICATION="pos_spring"
 export USER="tieelo"
 
 git clone --branch=${BRANCH} https://${GITHUB_USERNAME}:${GITHUB_TOKEN}@github.com/${USER}/${APPLICATION}.git
